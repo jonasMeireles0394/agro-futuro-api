@@ -1,16 +1,17 @@
 package com.example.agro_futuro_api.models;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "cultivation")
 public class CultivationModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private int id_user;
     private LocalDate planting_date;
     private LocalDate harvest_date;
     private String varieties;
@@ -22,6 +23,14 @@ public class CultivationModel {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
     }
 
     public LocalDate getPlanting_date() {

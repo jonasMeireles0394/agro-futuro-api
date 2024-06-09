@@ -1,17 +1,18 @@
 package com.example.agro_futuro_api.models;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 
 @Entity
 @Table(name = "users")
 public class UserModel implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String user_name;
-    private int user_password;
+    private String username;
+    private String name;
+    private String property;
+    private String password;
 
     public int getId() {
         return id;
@@ -21,19 +22,35 @@ public class UserModel implements Serializable {
         this.id = id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public int getUser_password() {
-        return user_password;
+    public String getName() {
+        return name;
     }
 
-    public void setUser_password(int user_password) {
-        this.user_password = user_password;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getProperty() {
+        return property;
+    }
+
+    public void setProperty(String property) {
+        this.property = property;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

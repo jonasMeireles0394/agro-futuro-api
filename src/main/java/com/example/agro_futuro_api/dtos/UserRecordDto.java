@@ -1,7 +1,10 @@
 package com.example.agro_futuro_api.dtos;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
-public record UserRecordDto(@NotBlank String user_name, @NotNull int user_password) {
+public record UserRecordDto(@NotBlank(message = "O nome de usuário não deve estar em branco") String username,
+                            @NotBlank(message = "O nome do usuário não deve estar em branco") String name,
+                            @NotBlank(message = "O nome da propriedade não deve estar em branco") String property,
+                            @NotBlank(message = "A senha não deve estar em branco") String password) {
+
 }

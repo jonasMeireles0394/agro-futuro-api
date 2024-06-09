@@ -3,6 +3,7 @@ package com.example.agro_futuro_api.controllers;
 import com.example.agro_futuro_api.dtos.CultivationRecordDto;
 import com.example.agro_futuro_api.models.CultivationModel;
 import com.example.agro_futuro_api.repositories.CultivationRepository;
+import com.example.agro_futuro_api.repositories.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import java.util.Optional;
 public class CultivationController {
     @Autowired
     CultivationRepository cultivationRepository;
+    UserRepository userRepository;
 
     @PostMapping("/planting")
     public ResponseEntity<CultivationModel> saveCultivation(@RequestBody @Valid CultivationRecordDto cultivationRecordDto){
